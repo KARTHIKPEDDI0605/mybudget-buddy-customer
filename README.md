@@ -54,7 +54,7 @@ mybudget-buddy-customer/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-organization/mybudget-buddy-customer.git
+git clone https://github.com/KARTHIKPEDDI0605/mybudget-buddy-customer.git
 
 # Navigate to the project directory
 cd mybudget-buddy-customer
