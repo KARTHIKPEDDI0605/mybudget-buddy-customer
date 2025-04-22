@@ -28,10 +28,10 @@ const EventCarousel = ({ onSelectEventType }) => {
     },
     {
       id: "slide-holiday",
-      title: "Holiday Events",
+      title: "Haldi Events",
       description: "Make your holiday celebrations special with our selection of event planners and venues.",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-6ncKV7jDxOY6_0UUP9zWbU78uEtWg0NcRQ&s",
-      buttonText: "Find Holiday Event Services",
+      buttonText: "Find Haldi Event Services",
       eventType: "holiday"
     },
     {
