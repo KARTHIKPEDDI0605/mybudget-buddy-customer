@@ -86,13 +86,10 @@ const FounderAvatar = styled(Avatar)(({ theme }) => ({
 // Card for displaying company values
 const ValueCard = styled(Card)(({ theme }) => ({
   height: '100%',
-  minHeight: '280px',
   borderRadius: '16px',
   backgroundColor: '#EFEEEA',
   boxShadow: '0 8px 24px rgba(39, 63, 79, 0.12)',
-  transition: 'transform 0.3s ease',
-  display: 'flex',
-  flexDirection: 'column',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   '&:hover': {
     transform: 'translateY(-8px)',
     boxShadow: '0 12px 30px rgba(39, 63, 79, 0.2)',
@@ -311,62 +308,6 @@ const AboutUs = () => {
                 Explore Services
               </Button>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <Box 
-                sx={{ 
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  p: 4,
-                  background: 'linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(252, 128, 25, 0.1))',
-                  borderRadius: '20px',
-                  boxShadow: '0 10px 30px rgba(39, 63, 79, 0.1)',
-                }}
-              >
-                <Box sx={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  p: 3,
-                  borderRadius: '16px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                  boxShadow: '0 8px 32px rgba(39, 63, 79, 0.1)',
-                  width: '100%',
-                }}>
-                  <Typography variant="h4" sx={{ mb: 3, color: '#8a2be2', fontWeight: 'bold' }}>
-                    Why Choose Us?
-                  </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <CheckCircleIcon sx={{ color: '#FE7743', mr: 2 }} />
-                    <Typography variant="body1" sx={{ color: '#273F4F', fontWeight: 'medium' }}>
-                      Verified Service Providers
-                    </Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <CheckCircleIcon sx={{ color: '#FE7743', mr: 2 }} />
-                    <Typography variant="body1" sx={{ color: '#273F4F', fontWeight: 'medium' }}>
-                      Transparent Pricing
-                    </Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <CheckCircleIcon sx={{ color: '#FE7743', mr: 2 }} />
-                    <Typography variant="body1" sx={{ color: '#273F4F', fontWeight: 'medium' }}>
-                      Secure Payments
-                    </Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <CheckCircleIcon sx={{ color: '#FE7743', mr: 2 }} />
-                    <Typography variant="body1" sx={{ color: '#273F4F', fontWeight: 'medium' }}>
-                      24/7 Customer Support
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Grid>
           </Grid>
         </Container>
       </Box>
@@ -440,31 +381,60 @@ const AboutUs = () => {
             Our Values
           </SectionTitle>
           
-          <Grid container spacing={4} sx={{ mt: 2 }}>
-            {COMPANY_VALUES.map((value) => (
-              <Grid item xs={12} sm={6} md={4} key={value.id}>
-                <ValueCard>
-                  <CardContent sx={{ 
-                    textAlign: 'center', 
-                    p: 4, 
-                    display: 'flex', 
-                    flexDirection: 'column',
-                    height: '100%'
-                  }}>
-                    <IconWrapper>
-                      {value.icon}
-                    </IconWrapper>
-                    <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', color: '#273F4F' }}>
-                      {value.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: '#273F4F', flexGrow: 1 }}>
-                      {value.description}
-                    </Typography>
-                  </CardContent>
-                </ValueCard>
-              </Grid>
-            ))}
-          </Grid>
+          <Box sx={{ mt: 4 }}>
+            <Grid 
+              container 
+              spacing={4} 
+              sx={{ 
+                justifyContent: 'center',
+              }}
+            >
+              {COMPANY_VALUES.map((value) => (
+                <Grid 
+                  item 
+                  xs={12} 
+                  sm={6} 
+                  md={4} 
+                  key={value.id}
+                >
+                  <Box sx={{ height: { xs: '300px', sm: '350px' } }}>
+                    <ValueCard>
+                      <CardContent sx={{ 
+                        textAlign: 'center', 
+                        p: 3,
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column'
+                      }}>
+                        <IconWrapper>
+                          {value.icon}
+                        </IconWrapper>
+                        <Typography 
+                          variant="h5" 
+                          sx={{ 
+                            mb: 2, 
+                            fontWeight: 'bold', 
+                            color: '#273F4F'
+                          }}
+                        >
+                          {value.title}
+                        </Typography>
+                        <Typography 
+                          variant="body1" 
+                          sx={{ 
+                            color: '#273F4F',
+                            flexGrow: 1
+                          }}
+                        >
+                          {value.description}
+                        </Typography>
+                      </CardContent>
+                    </ValueCard>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </StyledSection>
 
